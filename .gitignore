@@ -1,0 +1,15 @@
+.venv*/
+venv/
+build*/
+.cache/
+__pycache__/
+*.py[cod]
+*.o
+*.so
+*.dylib
+*.a
+*.egg-info/
+dist/
+results/
+.DS_Store
+*.log
