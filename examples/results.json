@@ -1,0 +1,135 @@
+{
+  "project": "distributed-clustering",
+  "environment": {
+    "recorded_at_utc": "2026-11-01T22:08:23.859421+00:00",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "logical_cpus": 10,
+    "python": "3.13.16",
+    "packages": {
+      "numpy": "2.5.4",
+      "torch": "2.15.0",
+      "Pillow": "13.0.0",
+      "matplotlib": "3.11.2",
+      "mpi4py": "4.1.2"
+    },
+    "backends": {
+      "cpu": {
+        "available": true,
+        "reason": "available"
+      },
+      "openmp": {
+        "available": true,
+        "reason": "available"
+      },
+      "torch-cpu": {
+        "available": true,
+        "reason": "available"
+      },
+      "mps": {
+        "available": false,
+        "reason": "MPS is unavailable in this process; try a regular macOS terminal"
+      },
+      "cuda-naive": {
+        "available": false,
+        "reason": "CUDA library was not built; NVIDIA hardware and nvcc are required"
+      },
+      "cuda-optimized": {
+        "available": false,
+        "reason": "CUDA library was not built; NVIDIA hardware and nvcc are required"
+      },
+      "cublas": {
+        "available": false,
+        "reason": "CUDA library was not built; NVIDIA hardware and nvcc are required"
+      }
+    }
+  },
+  "rows": 8000,
+  "dim": 64,
+  "clusters": 12,
+  "iterations": 15,
+  "seed": 42,
+  "threads_per_worker": 4,
+  "timing_scope": "Single-process warm wall time includes allocation, transfers and objective evaluation. MPI median includes process launch, input distribution and output I/O; compute-loop and collective fields are separate timings from the final repeat. Rank timing maxima can occur on different ranks and are not additive. Local ranks do not establish multi-node scaling.",
+  "algorithm": "Fixed-iteration spherical k-means; empty or zero-sum clusters retain previous centers. Reported final labels are reassigned to final centers. All backends share the same initialization.",
+  "records": [
+    {
+      "backend": "cpu",
+      "status": "ok",
+      "median_ms": 4.970124922692776,
+      "min_ms": 4.916666890494525,
+      "samples_ms": [
+        4.970124922692776,
+        4.916666890494525,
+        4.975082934834063
+      ],
+      "repeats": 3,
+      "warmup_runs": 1,
+      "objective": 1392.9933411069214,
+      "mean_cosine_distance": 0.1741241679266095,
+      "empty_clusters": 0,
+      "inlier_label_accuracy_after_matching": 0.8038659793814433,
+      "injected_outlier_recall_at_outlier_count": 1.0,
+      "objective_relative_difference_vs_cpu": 0.0
+    },
+    {
+      "backend": "openmp",
+      "status": "ok",
+      "median_ms": 2.6002919767051935,
+      "min_ms": 2.575166989117861,
+      "samples_ms": [
+        2.7940840227529407,
+        2.6002919767051935,
+        2.575166989117861
+      ],
+      "repeats": 3,
+      "warmup_runs": 1,
+      "objective": 1392.9933847859502,
+      "mean_cosine_distance": 0.17412417290359736,
+      "empty_clusters": 0,
+      "inlier_label_accuracy_after_matching": 0.8038659793814433,
+      "injected_outlier_recall_at_outlier_count": 1.0,
+      "objective_relative_difference_vs_cpu": 3.135623657379227e-08
+    },
+    {
+      "backend": "torch-cpu",
+      "status": "ok",
+      "median_ms": 3.6047500325366855,
+      "min_ms": 3.5917089553549886,
+      "samples_ms": [
+        3.5917089553549886,
+        3.683249931782484,
+        3.6047500325366855
+      ],
+      "repeats": 3,
+      "warmup_runs": 1,
+      "objective": 1392.9934692382812,
+      "mean_cosine_distance": 0.17412418443709612,
+      "empty_clusters": 0,
+      "inlier_label_accuracy_after_matching": 0.8038659793814433,
+      "injected_outlier_recall_at_outlier_count": 1.0,
+      "objective_relative_difference_vs_cpu": 9.198275112627592e-08
+    },
+    {
+      "backend": "mps",
+      "status": "skipped",
+      "reason": "MPS is unavailable in this process; try a regular macOS terminal"
+    },
+    {
+      "backend": "cuda-naive",
+      "status": "skipped",
+      "reason": "CUDA library was not built; NVIDIA hardware and nvcc are required"
+    },
+    {
+      "backend": "cuda-optimized",
+      "status": "skipped",
+      "reason": "CUDA library was not built; NVIDIA hardware and nvcc are required"
+    },
+    {
+      "backend": "cublas",
+      "status": "skipped",
+      "reason": "CUDA library was not built; NVIDIA hardware and nvcc are required"
+    }
+  ],
+  "provenance": "Measured on synthetic demo inputs before repository separation; numerical algorithms are retained. Re-run run.py for this checkout."
+}
